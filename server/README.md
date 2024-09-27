@@ -35,7 +35,7 @@
 ### Acciones a Realizar
 
 - [X] (5 puntos) Implementar controlador de registro de usuarios.
-- [ ] (5 puntos) Implementar controlador de cierre de sesión de usuarios.
+- [X] (5 puntos) Implementar controlador de cierre de sesión de usuarios.
 - [X] (5 puntos) Implementar ruta de cierre de sesión de usuarios.
 - [X] (5 puntos) Implementar validaciones de datos para las peticiones de las ordenes
 - [X] (5 puntos) Implementar validación de jwt en las rutas de las ordenes.
