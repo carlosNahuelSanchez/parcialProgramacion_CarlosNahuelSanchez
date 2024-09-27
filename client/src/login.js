@@ -1,10 +1,10 @@
 import "./style.css";
 
 // Obtener el formulario de inicio de sesión
-const $form = document.getElementById("login-form");
+const $loginForm = document.getElementById("login-form");
 
 // Añadir un evento de submit al formulario
-$form.addEventListener("submit", async (e) => {
+$loginForm.addEventListener("submit", async (e) => {
   // Evitar que el formulario recargue la página
   e.preventDefault();
 
@@ -15,7 +15,7 @@ $form.addEventListener("submit", async (e) => {
   const entries = Object.fromEntries(formData.entries());
 
   // Realizar una solicitud POST a la API de inicio de sesión
-  fetch("http://localhost:4321/auth/sign-in", {
+  const response = fetch("http://localhost:4321/auth/sign-in", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
