@@ -1,3 +1,4 @@
+import { cookie } from "express-validator";
 import { createJwt } from "../helpers/createJwt.js";
 import { createUser, getUserByCredentials } from "../models/user.model.js";
 
@@ -16,6 +17,7 @@ export const signInCtrl = async (req, res) => {
     res.cookie("token", token, { httpOnly: true });
 
     res.status(200).json({ token, user });
+
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -43,10 +45,9 @@ export const signUpCtrl = async (req, res) => {
   }
 };
 
-export const signOutCtrl = (_req, res) => {
+export const signOutCtrl = (req, res) => {
   try {
-    // ! Completar la función signOutCtrl
-    res.status(200).json({ message: "Sign out success" });
+    res.json("Sesion Cerrada")
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

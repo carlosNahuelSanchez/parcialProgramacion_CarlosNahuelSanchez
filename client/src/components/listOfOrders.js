@@ -28,8 +28,8 @@ import Img2 from "../assets/coffee2.png";
 //   },
 // ];
 
-const req = await fetch("http://localhost:4321/orders");
-const data = await req.json();
+const response = await fetch("http://localhost:4321/orders");
+const data = await response.json();
 
 // Función que crea y devuelve el fragmento de HTML para la sección de servicios
 export const listOfOrders = () => {

@@ -17,7 +17,7 @@ export const createUser = async (user) => {
   };
 
   usersCollection.push(newUser);
-
+  console.log(usersCollection)
   return newUser;
 };
 

@@ -1,4 +1,5 @@
 import Logo from "../assets/website/coffee_logo.png";
+import { logout } from "../logout";
 
 const menuList = [
   {
@@ -183,9 +184,7 @@ export function navbar(session = null) {
       "bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full";
     logoutButton.textContent = "Logout";
 
-    logoutButton.addEventListener("click", () => {
-      // ! HACER EL LOGOUT DEL USUARIO Y REDIRIGIR A LA PÁGINA DE LOGIN
-    });
+    logoutButton.addEventListener("click", logout)
 
     menuDiv.appendChild(logoutButton);
   } else {

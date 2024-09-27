@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { orderValidation } from "../validations/orders.validations.js";
 import {
   createOrderCtrl,
   getOrdersCtrl,
@@ -10,6 +11,6 @@ const ordersRouter = Router();
 ordersRouter.get("/", getOrdersCtrl);
 
 // ! FALTAN VALIDACIONES DE DATOS
-ordersRouter.post("/", createOrderCtrl);
+ordersRouter.post("/", orderValidation, createOrderCtrl);
 
 export { ordersRouter };
