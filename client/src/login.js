@@ -9,7 +9,7 @@ $loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   // Crear un objeto FormData con los datos del formulario
-  const formData = new FormData($form);
+  const formData = new FormData($loginForm);
 
   // Convertir el objeto FormData a un objeto plano
   const entries = Object.fromEntries(formData.entries());
@@ -20,12 +20,14 @@ $loginForm.addEventListener("submit", async (e) => {
     headers: {
       "Content-Type": "application/json",
     },
+    credentials:"include",
     body: JSON.stringify(entries),
   }).then((response) => {
     if (response.ok) {
-      // ! REDIRIGIR AL USUARIO A LA PÁGINA PRINCIPAL
+      alert("Sesion Iniciada")
+      window.location.href = "/pages/orders"
     } else {
-      // ! MOSTRAR UN MENSAJE DE ERROR AL USUARIO
+      alert("Error al iniciar sesion")
     }
   });
 });

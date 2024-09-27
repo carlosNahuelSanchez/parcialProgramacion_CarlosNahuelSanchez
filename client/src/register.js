@@ -31,8 +31,8 @@ const registerUsers = async (e) => {
         }
         else{
             const data =  await response.json()
-            console.log(data)
             alert(data.message)
+            window.location.href = "/pages/login";
         }
 
     } catch (error) {
